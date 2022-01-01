@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <span>Blog App</span>
+    <ul  class="__custom-ul">
+      <li *ngIf="!auth.isLoggedIn">
+        <a routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!auth.isLoggedIn">
+        <a routerLink="/register">Register</a>
+      </li>
+      <li *ngIf="auth.isLoggedIn">
+        <a routerLink="/blogs">Blogs</a>
+      </li>
+      <li *ngIf="auth.isLoggedIn" style="cursor: pointer;">
+        <a (click)="logout()" >Logout</a>
+      </li>
+    </ul>
+</mat-toolbar>

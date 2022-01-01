@@ -1,0 +1,22 @@
+<table border="1" style="margin: auto;" *ngIf = "blogs.length">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Created By</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let blog of blogs">
+            <td>{{ blog.title }}</td>
+            <td>{{ blog.description }}</td>
+            <td>{{ blog.status }}</td>
+            <td>{{ blog.user?.firstname }}</td>
+            <td>
+                <button mat-button (click)="deleteBlog(blog)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

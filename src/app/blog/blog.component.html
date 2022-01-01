@@ -1,0 +1,41 @@
+<div style="margin-top: 20px;">
+    <mat-card style="width: 60%; margin: auto;">
+        <mat-card-header>
+            <mat-card-title>Blog</mat-card-title>
+            <mat-card-subtitle>Enter Blog</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="blogForm" (ngSubmit)="saveBlog()">
+            <!-- Title -->
+            <mat-form-field appearance="standard" style="width: 100%;">
+                <label>Title</label>
+                <input matInput style="padding: 10px 0;" formControlName="title"
+                        type="text"
+                        required
+                        placeholder="Title">
+            </mat-form-field>
+            <!-- Description -->
+            <mat-form-field appearance="standard" style="width: 100%;">
+                <label>Description</label>
+                <input matInput style="padding: 10px 0;" formControlName="description"
+                        type="text"
+                        required
+                        placeholder="Description">
+            </mat-form-field>
+            <!-- Status -->
+            <mat-form-field appearance="standard" style="width: 100%;">
+                <label>Status</label>
+                <mat-select formControlName="status"  placeholder="Select Status" style="padding: 10px 0;">
+                    <mat-option value="">Please Select</mat-option>
+                    <mat-option value="active">Active</mat-option>
+                    <mat-option value="inactive">InActive</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-card-actions align="start">
+                <button mat-button [disabled]="!blogForm.valid" type="submit" color="primary">Save</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>
+<app-blog-list [blogs]="blogs"></app-blog-list>
+
+

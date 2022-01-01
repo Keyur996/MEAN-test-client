@@ -1,0 +1,32 @@
+<div style="margin-top: 20px;">
+    <mat-card style="width: 40%; margin: auto;">
+        <mat-card-header>
+            <mat-card-title>LogIn</mat-card-title>
+            <mat-card-subtitle>Hi....</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="logInForm" (ngSubmit)="logIn()">
+            <!-- Email -->
+            <mat-form-field appearance="standard" style="width: 100%;">
+                <label>Email</label>
+                <input matInput style="padding: 10px 0;" formControlName="email"
+                        type="text"
+                        required
+                        placeholder="Email">
+            </mat-form-field>
+            <!-- Password -->
+            <mat-form-field appearance="standard" style="width: 100%;">
+                <label>Password</label>
+                <input matInput style="padding: 10px 0;" formControlName="password"
+                        type="password"
+                        required
+                        placeholder="Password">
+            </mat-form-field>
+            <mat-card-actions align="start">
+                <button mat-button [disabled]="!logInForm.valid" type="submit" color="primary">Save</button>
+            </mat-card-actions>
+            <div *ngIf="errorMessage" style="font-size: small; color: red;">
+                <span>{{ errorMessage }}</span>
+            </div>
+        </form>
+    </mat-card>
+</div>

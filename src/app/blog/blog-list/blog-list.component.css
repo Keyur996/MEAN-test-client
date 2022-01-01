@@ -1,0 +1,7 @@
+table > thead > tr > th {
+    padding: 4px;
+}
+
+table > tbody > tr > td {
+    padding: 4px;
+}
